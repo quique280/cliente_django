@@ -1,1 +1,1 @@
-web: gunicorn servidor_django.wsgi
+web: gunicorn cliente_django.wsgi

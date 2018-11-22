@@ -8,11 +8,15 @@ https://docs.djangoproject.com/en/2.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/2.1/ref/settings/
+
+Maria Alvarez Hernandez ID: 4-0239-0850
+Luis Alonso Calderon Achio ID: 1-1702-0626
+Enrique Diaz Delgado ID: 1-1725-0124
+Derian Sibaja Chavarria ID 4-0232-0842
 """
 
 import os
 import django_heroku
-import psycopg2
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -22,20 +26,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '_v^0c$-6#%(_x351pfpgd27i&_uf*6q$g)rpq6z+w5^k$=@^bt'
+SECRET_KEY = 'fq6dv(!_!@o6d*-brx5=b7e4u4v61dsfufk@hi&g$n-yek7c!3'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
-# Django rest framework
-REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': [
-        'rest_framework.authentication.SessionAuthentication'
-    ]
-}
 
 # Application definition
 
@@ -83,23 +80,17 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'cliente_django.wsgi.application'
 
+
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dab54frc955qbm',
-        'USER': 'urqjitrhjndrbm',
-        'PASSWORD': 'c0c3bc9bfd65dc41eaf05395f8480172b1ec956b394d8c6bf12428078357637c',
-        'HOST': 'ec2-23-21-201-12.compute-1.amazonaws.com',
-       'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
-DATABASE_URL = os.environ['DATABASE_URL']
-
-conn = psycopg2.connect(DATABASE_URL, sslmode='require')
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -139,11 +130,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
-
-CORS_ORIGIN_ALLOW_ALL = True
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'cliente_django/static'),
+]
 
 # Activate Django-Heroku.
 django_heroku.settings(locals())
-
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)

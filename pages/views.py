@@ -53,7 +53,7 @@ def index(request,pagename):
     if the_page["bodytext"] == 'Probar' :
         return render(request, "pages/pageForm.html",context)
     elif the_page["bodytext"] == "Historial":
-        context['pruebas'] = requests.get('https://servidordjango.herokuapp.com/api/pruebas').json
+        context['pruebas'] = requests.get('http://127.0.0.1:8081/api/pruebas').json
         return render(request, "pages/historial.html", context)
     else:
         return render(request, "pages/page.html",context)

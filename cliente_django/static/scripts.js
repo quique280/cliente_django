@@ -4,7 +4,7 @@ Luis Alonso Calderon Achio ID: 1-1702-0626
 Enrique Diaz Delgado ID: 1-1725-0124
 Derian Sibaja Chavarria ID 4-0232-0842
 */
-const URL_SERVER = "https://servidordjango.herokuapp.com/api/pruebas"
+const URL_SERVER = "http://127.0.0.1:8081/api/pruebas"
 
 function enviarAfirmacion() {
 	let caja = document.getElementById('afirmacion')
