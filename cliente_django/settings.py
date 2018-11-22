@@ -16,6 +16,7 @@ Derian Sibaja Chavarria ID 4-0232-0842
 """
 
 import os
+import dj_database_url
 import django_heroku
 import psycopg2
 
