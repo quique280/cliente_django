@@ -1,0 +1,44 @@
+{
+        "afirmacion": "y & c => c | y",
+        "fecha": "2018-11-21T02:36:50.925843-06:00",
+        "deducciones": [
+            {
+                "prueba": "y & c => c | y",
+                "afirmacion": "y & c => c | y"
+            },
+            {
+                "prueba": "y & c => c | y",
+                "afirmacion": "y, c => c | y"
+            },
+            {
+                "prueba": "y & c => c | y",
+                "afirmacion": "y, c => c, y"
+            }
+        ],
+        "inferencias": [
+            {
+                "prueba": "y & c => c | y",
+                "deduccionVieja": "y & c => c | y",
+                "deduccionNueva": "y, c => c | y",
+                "regla": "And-Left",
+                "reglaPosIzq": 0,
+                "reglaPosDer": null
+            },
+            {
+                "prueba": "y & c => c | y",
+                "deduccionVieja": "y, c => c | y",
+                "deduccionNueva": "y, c => c, y",
+                "regla": "Or-Right",
+                "reglaPosIzq": null,
+                "reglaPosDer": 0
+            },
+            {
+                "prueba": "y & c => c | y",
+                "deduccionVieja": "y, c => c, y",
+                "deduccionNueva": "y, c => c, y",
+                "regla": "Axiom",
+                "reglaPosIzq": 0,
+                "reglaPosDer": 1
+            }
+        ]
+    }

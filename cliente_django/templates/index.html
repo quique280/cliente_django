@@ -1,0 +1,45 @@
+<!--Maria Alvarez Hernandez ID: 4-0239-0850-->
+<!--Luis Alonso Calderon Achio ID: 1-1702-0626-->
+<!--Enrique Diaz Delgado ID: 1-1725-0124-->
+<!--Derian Sibaja Chavarria ID 4-0232-0842-->
+
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Wang</title>
+    <base href="/">
+    <link rel="shortcut icon" href="{% static 'favicon.png' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'default.css' %}" />
+</head>
+<body>
+    <div id="wrapper">
+        <header>Wang. Demostrador de teoremas</header>
+        <div id="contents">
+		    <div class="row">
+				<div class="col-md-6">
+					<p>Escriba la formula de la afirmación que desea probar</p>
+					<form id="formulario" action="" method="#">
+						<table>
+							<tr>
+								<td><textarea id="afirmaciones" cols="40" rows="5"></textarea></td>
+							</tr>
+							<tr>
+								<td>
+									<input type="reset" value="Borrar"/>
+									<button onclick="enviarAfirmacion();">Enviar</button>
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+				<div class="col-md-6">
+					<div id="diagrama" class="container-fluid"></div>
+				</div>
+			</div>
+        <footer></footer>
+    </div>
+</body>
+<script src="{% static 'scripts.js' %}"></script>   
+</html>

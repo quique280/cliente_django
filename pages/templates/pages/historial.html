@@ -1,0 +1,72 @@
+<!--Maria Alvarez Hernandez ID: 4-0239-0850-->
+<!--Luis Alonso Calderon Achio ID: 1-1702-0626-->
+<!--Enrique Diaz Delgado ID: 1-1725-0124-->
+<!--Derian Sibaja Chavarria ID 4-0232-0842-->
+
+{% extends "base.html" %}
+
+{% block title %}{{title}}{% endblock title %}
+
+
+{% block tpnav %}
+    {% for page in page_list %}
+        <a href="{{page.permalink}}">{{ page.title }}</a>
+    {% endfor %}
+{% endblock tpnav %}
+
+
+{% block content %}
+    {% autoescape off %}
+	
+  <div class="row">
+				<div class="col-md-6">
+					<p>Pruebas realizadas anteriormente</p>
+						<table  class="table table-striped">
+							<tr>
+                                <td>Afirmación</td>
+                                <td>Fecha</td>
+                                <td>Mostrar Árbol</td>
+                            </tr>
+                            <tbody id="tabla-historial">
+                                {% for pr in pruebas %}
+                                <tr>
+                                    <td>{{pr.afirmacion}}</td>
+                                    <td>{{pr.fecha}}</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+							
+						</table>
+				</div>
+            </div>
+            
+            <!-- The Modal -->
+	<div class="modal" id="myModal">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+  
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">Árbol de prueba</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+  
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div id="diagrama">
+              
+            </div>
+            </div>
+  
+            <!-- Modal footer -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            </div>
+  
+          </div>
+        </div>
+      </div>
+    {% endautoescape %}
+{% endblock content %}
+
+
